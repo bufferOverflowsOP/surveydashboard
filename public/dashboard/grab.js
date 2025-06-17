@@ -1,6 +1,8 @@
 let inside = document.getElementById("jsonFile");
 
+// Get data
 fetch('/data/index.json')
+    // Make sure response is good, kill yourself if it isn't
     .then(response => {
         if (!response.ok) {
             throw new Error(`ERROR: ${response.error}`)
@@ -9,7 +11,14 @@ fetch('/data/index.json')
     })
     .then(data => {
     for (let key in data) {
-        inside.innerHTML+=`<p>${key}, ${data[key]["subjects"]}, ${data[key]["fav"]}</p>`;
+        // Add table entry for each name in data
+        inside.insertAdjacentHTML('afterbegin', `
+            <tr>
+                <th scope="row">${key}</th>
+                <td>${data[key]["subjects"]}</td>
+                <td>${data[key]["fav"]}</td>
+            </tr>`
+        )
     }
     }).catch(err => {
     alert(err);

@@ -3,15 +3,18 @@
     <head>
         <meta charset="utf-8" />
         <title>Dashboard</title>
+        <link rel="stylesheet" href="table.css" />
     </head>
     <body>
-        
-            <div class="tr">
-                <div class="th">Name</div>
-                <div class="th">Subject</div>
-                <div class="th">Fav</div>
-            </div>
-        <p id="jsonFile"></p>
+        <table>
+            <thead>
+                <th scope="col">Name</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Fav</th>
+            </thead>
+            <tbody id="jsonFile">
+            </tbody>
+        </table>
         <script src="grab.js"></script>
     </body>
 </html>
