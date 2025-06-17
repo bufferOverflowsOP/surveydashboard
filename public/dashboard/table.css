@@ -1,10 +1,23 @@
 table {
+    border: 2px solid rgb(140 140 140);
+    border-collapse: collapse;
     margin-top: 20px;
     margin-left: 20px;
 }
-.entry {
-    width: 100px;
+thead {
+    text-align: left;
+}
+th, td {
+    width: 30vh;
     height: 50px;
-    white-space: nowrap;
+    white-space: wrap;
     display: inline-block;
+    border: 1px solid rgb(140 140 140);
+}
+body {
+    display: flex;
+}
+.table-side, .option-side {
+    flex: 1;
+    padding: 10px;
 }
