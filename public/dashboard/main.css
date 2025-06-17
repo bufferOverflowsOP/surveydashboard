@@ -1,0 +1,8 @@
+body {
+    display: flex;
+    font-family: "Montserrat";
+}
+.table-side, .option-side {
+    flex: 1;
+    padding: 10px;
+}
