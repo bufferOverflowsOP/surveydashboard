@@ -11,26 +11,52 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!--There will be two sides: Left side contains the table, right side contains the option settings-->
-        <div class="table-side">
-        <table>
-            <thead>
-                <th scope="col">Name</th>
-                <th scope="col">Subject</th>
-                <th scope="col">Fav</th>
-            </thead>
-            <tbody id="jsonFile">
-            </tbody>
-        </table>
-        </div>
-        <div class="option-side">
-            <p class="config-text">Config:</p>
-            <!--Switch-->
-            <label class="switch">
-                <input type="checkbox" />
-                <span class="slider"></span>
-            </label>
-            <p>Settings;</p>
+        <h1>Survey Results</h1>
+        <div class="body-flex-container">
+            <!--There will be two sides: Left side contains the table, right side contains the option settings-->
+            <div class="table-side">
+            <table>
+                <thead>
+                    <th scope="col" id="name">Name</th>
+                    <th scope="col" id="subject">Subject</th>
+                    <th scope="col" id="fav">Fav</th>
+                </thead>
+                <tbody id="jsonFile">
+                </tbody>
+            </table>
+            </div>
+            <div style="width:2px;height:700px;background:gray;margin-right:10px;"></div>
+            <div class="option-side">
+                <p class="config-text">Config:</p>
+                <!--Switch-->
+                <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                </label>
+                <p>Settings;</p>
+            </div>
+            <button id="hide-arrow"><</button>
+            <script>
+                document.querySelector("#hide-arrow").addEventListener("mousedown", function () {
+                    document.querySelector(".option-side").classList.toggle("show");
+                })
+            </script>
+            <style>
+                #hide-arrow {
+                    height: 50px;
+                    width: 50px;
+                    font-size: 20pt;
+                    border-radius: 25px;
+                }
+                @keyframes slideOver {0% {margin-right: -500px;}50% {margin-right: -250px;}100% {margin-right: 0px;}}
+                .option-side {
+                    display: none;
+                }
+                .show {
+                    display: block !important;
+                    animation: slideOver 0.2s linear;
+                }
+            </style>
         </div>
         <script src="grab.js"></script>
     </body>

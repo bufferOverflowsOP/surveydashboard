@@ -1,8 +1,14 @@
 body {
-    display: flex;
     font-family: "Montserrat";
 }
-.table-side, .option-side {
+.body-flex-container {
+    display: flex;
+}
+.table-side {
+    flex: 3;
+    padding: 10px;
+}
+.option-side {
     flex: 1;
     padding: 10px;
 }

@@ -14,7 +14,7 @@ fetch('/data/index.json')
         // Add table entry for each name in data
         inside.insertAdjacentHTML('afterbegin', `
             <tr>
-                <th scope="row">${key}</th>
+                <td>${key}</td>
                 <td>${data[key]["subjects"]}</td>
                 <td>${data[key]["fav"]}</td>
             </tr>`
